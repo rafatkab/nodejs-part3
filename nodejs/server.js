@@ -1,9 +1,12 @@
 const express = require("express");
+require("dotenv").config();
 
 const app = express();
 
 app.get("/login", (req, res) => {
-  res.send(user);
+  const username = process.env.USER;
+  const password = process.env.PASSWORD;
+  res.json({ username, password });
 });
 
 const port = 3000;
